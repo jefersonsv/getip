@@ -12,7 +12,7 @@ dotnet run
 git clone https://github.com/jefersonsv/getip
 cd getip\src
 sudo docker build -t getip .
-sudo docker run -p 4020:5000 --rm getip
+sudo docker run -d -p 4020:5000 --rm getip
 ```
 
 ## How to test

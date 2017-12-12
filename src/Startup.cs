@@ -16,7 +16,9 @@ namespace getip
         {
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync(context.Connection.RemoteIpAddress?.ToString());
+                await context.Response.WriteAsync(
+                    context.Connection.RemoteIpAddress?.ToString()
+                );
             });
         }
     }
