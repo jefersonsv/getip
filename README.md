@@ -10,7 +10,7 @@ dotnet run
 ## Docker container service
 ```bash
 git clone https://github.com/jefersonsv/getip
-cd getip\src
+cd getip/src
 sudo docker build -t getip .
 sudo docker run --name getip -d -p 4020:5000 --rm getip
 ```

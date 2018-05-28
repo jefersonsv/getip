@@ -11,15 +11,20 @@ namespace getip
 {
     public class Startup
     {
+        private static void PrintHeaders(HttpContext context)
+        {
+            context.Request.Headers.ToList().ForEach(o => Console.WriteLine($"Key: {o.Key} Value: {o.Value}"));
+        }
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.Run(async (context) =>
             {
-                context.Request.Headers.ToList().ForEach(o => Console.WriteLine($"Key: {o.Key} Value: {o.Value}"));
+                var xforwardedfor = context.Request.Headers["X-Forwarded-For"].SingleOrDefault();
                 await context.Response.WriteAsync(
-                        context.Connection.RemoteIpAddress?.ToString()
-                );
+                        xforwardedfor ?? context.Connection.RemoteIpAddress?.ToString()
+                    );
             });
         }
     }
