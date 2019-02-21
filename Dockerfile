@@ -10,9 +10,8 @@ COPY . ./
 RUN dotnet publish -c Release -o out
 
 # build runtime image
-# microsoft/dotnet:2.0-runtime # don't work
 FROM microsoft/dotnet:2.2-runtime
 WORKDIR /app
-COPY --from=build-env /app/out ./
+COPY --from=build-env /app/src/out ./
 
 ENTRYPOINT ["dotnet", "getip.dll"]
