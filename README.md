@@ -1,15 +1,13 @@
 # Getip
-It's a fast kestrel server to inform your public IP address
-
-## Windows command line service
-```bash
-git clone https://github.com/jefersonsv/getip
-dotnet run
-```
+It's a fast kestrel server to get your public IP address
 
 ## Docker
 Images to run getip in docker container
 
+### from docker hub
+```bash
+docker run -p 4020:5000 jefersonsv/getip
+```
 
 ### from local container
 ```bash
@@ -19,17 +17,17 @@ sudo docker build -t getip .
 sudo docker run --restart=unless-stopped -d -p 4020:5000 --name getip getip
 ```
 
-### from docker hub
-```bash
-docker run -p 8081:5000 jefersonsv/getip
-```
-
 ## How to test
 ```bash
 curl 'http://localhost:4020'
 ```
 
+## Run locally
+```bash
+git clone https://github.com/jefersonsv/getip
+dotnet run
+```
+
 ## Similar hosted services
 * https://api.ipify.org
 * http://checkip.dyndns.org
-
