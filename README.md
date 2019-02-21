@@ -28,6 +28,6 @@ git clone https://github.com/jefersonsv/getip
 dotnet run
 ```
 
-## Similar hosted services
+# Similar third party hosted services
 * https://api.ipify.org
 * http://checkip.dyndns.org
