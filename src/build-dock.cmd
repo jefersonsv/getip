@@ -1,0 +1,4 @@
+﻿docker build -t dadosabertos .
+docker run --rm dadosabertos run --bucket "dados_abertos" --doctype "preco-medicamento" --parser "csv" --separator ";" --encoding "latin1" --url "https://dados.anvisa.gov.br/dados/TA_PRECOS_MEDICAMENTOS.csv"
+docker run --rm dadosabertos run --bucket "dados_abertos" --doctype "farmacia-popular" --parser "csv" --separator "," --encoding "utf-8" --url "http://i3geo.saude.gov.br/i3geo/ogc.php?service=WFS&version=1.0.0&request=GetFeature&typeName=farmacia_popular_estabelecimento&outputFormat=CSV"
+docker run --rm dadosabertos run --bucket "dados_abertos" --doctype "ubs" --parser "json" --encoding "utf-8" --url "http://i3geo.saude.gov.br/i3geo/ogc.php?service=WFS&version=1.0.0&request=GetFeature&typeName=ubs_existentes&outputFormat=CSV"
