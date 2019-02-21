@@ -1,1 +1,1 @@
-﻿docker build -t getip .
+docker build -t getip .
